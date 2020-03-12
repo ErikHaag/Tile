@@ -1,7 +1,8 @@
 let b;
 
 function setup() {
-  createCanvas(430, 430);
+  let minD = min(windowWidth, windowHeight);
+  createCanvas(minD - 50, minD - 50);
   setupGUI();
   b = createBoard();
 }
