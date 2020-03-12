@@ -40,3 +40,26 @@ function draw() {
     pPressed = false
   }
 }
+
+let px;
+let py;
+
+function mousePressed() {
+  px = mouseX;
+  py = mouseY
+}
+
+function touchEnded() {
+  let angle = degrees(atan2(py - mouseY, px - mouseX));
+  if (sqrt(sq(px - mouseX) + sq(py - mouseY)) >= 100) {
+    if (-45 < angle && angle <= 45) {
+      b.L();
+    } else if (45 < angle && angle <= 135) {
+      b.U();
+    } else if ((135 < angle && angle <= 180) || (-180 < angle && angle <= -135)) {
+      b.R();
+    }else if (-135 < angle && angle <= -45) {
+      b.D();
+    }
+  }
+}
