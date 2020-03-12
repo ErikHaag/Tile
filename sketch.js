@@ -41,17 +41,9 @@ function draw() {
   }
 }
 
-let px;
-let py;
-
-function mousePressed() {
-  px = mouseX;
-  py = mouseY
-}
-
 function touchEnded() {
-  let angle = degrees(atan2(py - mouseY, px - mouseX));
-  if (sqrt(sq(px - mouseX) + sq(py - mouseY)) >= 100) {
+  let angle = degrees(atan2((height/2) - mouseY, (width/2) - mouseX));
+  if ((sqrt(sq((width/2)- mouseX) + sq((height/2) - mouseY)) >= 100) && (0 <= mouseX && mouseX <= width && 0 <= mouseY && mouseY <= height)) {
     if (-45 < angle && angle <= 45) {
       b.L();
     } else if (45 < angle && angle <= 135) {
