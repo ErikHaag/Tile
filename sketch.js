@@ -16,7 +16,7 @@ function draw() {
   if (colS.value() != pC || rowS.value() != pR) {
     b.setup(colS.value(),rowS.value()); 
     pC = colS.value();
-    pR = rowS.value()
+    pR = rowS.value();
   }
   b.display();
   if (keyIsPressed && !pPressed) {
@@ -37,7 +37,7 @@ function draw() {
     }
   }
   if (!keyIsPressed && pPressed) {
-    pPressed = false
+    pPressed = false;
   }
 }
 
@@ -54,4 +54,5 @@ function touchEnded() {
       b.D();
     }
   }
+  return false;
 }
