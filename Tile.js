@@ -12,7 +12,7 @@ function createTile(P, N, W, H, E) {
         fill(this.col)
         rect(this.pos.x * this.w, this.pos.y * this.h, this.w, this.h);
         textAlign(CENTER, CENTER);
-        textSize(min(3 * this.w,this.h) - 40);
+        textSize(min(this.w / 3,this.h) - 40);
         fill(0);
         text(str(this.num), (this.pos.x + 0.5) * this.w, (this.pos.y + 0.5) * this.h);
       }
